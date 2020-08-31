@@ -47,6 +47,7 @@ class Game{
                  drawSprites();
                  for(var plr in allPlayers){
                     
+                    //playerScore = player.score
                     
                      index = index+1;
                      x = 500-allPlayers[plr].distance;
@@ -60,8 +61,9 @@ class Game{
                          fill("black");
                          textSize(25);
                          text(allPlayers[plr].name ,x-25,y+25);
-
-                         
+                         fill("white")
+                         text(allPlayers.player1.name + ": " + allPlayers.player1.score,100,50);
+                         text(allPlayers.player2.name + ": " + allPlayers.player2.score,100,100);
                      }
                     
                      
@@ -105,6 +107,8 @@ class Game{
 
                      if(fruitGroup.isTouching(players)){
                         fruitGroup.destroyEach();
+
+                        player.score = player.score+1;
                      }
                   }
                 
